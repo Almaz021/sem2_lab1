@@ -1,11 +1,11 @@
-public interface List301 {
-    void add(Integer e) throws EmptyElementException;
+public interface List301<T> {
+    void add(T e) throws EmptyElementException;
 
-    void delete(int index) throws IndexOutOfBoundsException;
+    static void delete(int index) throws IndexOutOfBoundsException {}
 
-    Integer pop() throws IndexOutOfBoundsException;
+    Object pop() throws IndexOutOfBoundsException;
 
-    Integer get(int index);
+    Object get(int index);
 
     int size();
 }

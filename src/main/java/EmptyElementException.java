@@ -1,3 +1,3 @@
-public class EmptyElementException extends Exception{
+public class EmptyElementException extends Exception {
 
 }

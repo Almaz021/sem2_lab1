@@ -23,32 +23,31 @@ public class Test {
 //            System.out.println(e.getMessage());
 //        }
 
-//        LinkedList link = new LinkedList();
-//        try {
-////            Добавление
-//            for (int i = 0; i < 13; i++) {
-//                link.add(i);
-//                System.out.println(link.size());
-//                System.out.println(link);
-//            }
-//            System.out.println(link.get(6));
-//            link.pop();
-//            System.out.println(link.pop());
-//            System.out.println(link);
-//            link.delete(6);
-//            System.out.println(link);
-//
-//
-//
-//        } catch (EmptyElementException e) {
-//            System.out.println("ERROR!");
-//        } catch (IndexOutOfBoundsException e) {
-//            System.out.println(e.getMessage());
-//        }
+        LinkedList<Integer> link = new LinkedList<Integer>();
+        try {
+//            Добавление
+            for (int i = 0; i < 13; i++) {
+                link.add(i);
+                System.out.println(link.size());
+                System.out.println(link);
+            }
+            System.out.println(link.get(6));
+            link.pop();
+            System.out.println(link.pop());
+            System.out.println(link);
+            link.delete(6);
+            System.out.println(link);
+
+
+        } catch (EmptyElementException e) {
+            System.out.println("ERROR!");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+        }
         try {
             int[] a = {1, 2, 3, 2, 3, 2, 5, 7, 2, 0, -1};
-            MyList lst = new MyList(a);
-            lst.add(7);
+            MyList<Integer> lst = new MyList<Integer>(a);
+            lst.add(4);
             System.out.println(lst);
             System.out.println(lst.findFirst(0));
             lst.deleteAll(2);

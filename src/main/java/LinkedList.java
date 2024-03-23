@@ -1,17 +1,17 @@
-public class LinkedList implements List301 {
-    Node head;
+public class LinkedList<T> implements List301<T> {
+    Node<T> head;
     int size = 0;
 
-    public void add(Integer e) throws EmptyElementException {
+    public void add(T e) throws EmptyElementException {
         if (e == null) {
             throw new EmptyElementException();
         }
         if (head == null) {
-            head = new Node();
+            head = new Node<T>();
             head.value = e;
         } else {
-            Node current = head;
-            Node n = new Node();
+            Node<T> current = head;
+            Node<T> n = new Node<T>();
             n.value = e;
             while (current.next != null) {
                 current = current.next;
@@ -23,7 +23,7 @@ public class LinkedList implements List301 {
 
     public void delete(int index) throws IndexOutOfBoundsException {
         if (size > index) {
-            Node curr = head;
+            Node<T> curr = head;
             for (int i = 0; i < index - 1; i++) {
                 curr = curr.next;
             }
@@ -34,18 +34,18 @@ public class LinkedList implements List301 {
         }
     }
 
-    public Integer pop() throws IndexOutOfBoundsException {
-        Node curr = head;
+    public T pop() throws IndexOutOfBoundsException {
+        Node<T> curr = head;
         if (head != null) {
             if (head.next == null) {
-                int el = head.value;
+                T el = head.value;
                 head = null;
                 size--;
                 return el;
             }
             while (true) {
                 if (curr.next.next == null) {
-                    int el = curr.next.value;
+                    T el = curr.next.value;
                     curr.next = null;
                     size--;
                     return el;
@@ -56,8 +56,8 @@ public class LinkedList implements List301 {
         throw new IndexOutOfBoundsException("pop err");
     }
 
-    public Integer get(int index) {
-        Node curr = head;
+    public T get(int index) {
+        Node<T> curr = head;
         if (head != null) {
             for (int i = 0; i < index; i++) {
                 curr = curr.next;
@@ -76,7 +76,7 @@ public class LinkedList implements List301 {
 
 
     public String toString() {
-        Node curr = head;
+        Node<T> curr = head;
         String s = "";
         while (curr != null) {
             s = s + " " + curr.value;
